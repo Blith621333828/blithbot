@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BlithBot - Bot stworzony w BDFD. Dodaj bota do swojego serwera Discord i uzyskaj wsparcie.">
   <title>BlithBot</title>
   <link rel="icon" href="https://cdn.discordapp.com/avatars/1006607278885056643/4f8661b663c9af3c1d10e27e4714d47b.png" type="image/png">
   <style>
@@ -28,7 +31,7 @@
       cursor: pointer;
       margin-top: 20px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
       display: inline-block;
       font-size: 18px;
       font-weight: bold;
@@ -36,6 +39,7 @@
     
     .button:hover {
       background-color: #00cccc;
+      transform: scale(1.05);
     }
     
     .container {
@@ -45,10 +49,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
     }
     
     .sidebar {
-      width: 200px;
+      width: 100%;
       background-color: #000;
       color: #00ffff;
       padding: 20px;
@@ -73,54 +78,92 @@
       border-radius: 50%;
     }
     
-    .moderators {
+    .moderators, .ceo {
       color: #00ffff;
       font-size: 18px;
       margin-top: 40px;
       text-align: left;
     }
     
-    .moderators h2 {
+    .moderators h2, .ceo h2 {
       font-weight: bold;
       margin-bottom: 10px;
     }
     
-    .moderators ul {
+    .moderators ul, .ceo ul {
       list-style-type: none;
       padding: 0;
     }
     
-    .moderators li {
+    .moderators li, .ceo li {
       margin-bottom: 5px;
+    }
+
+    .moderators a, .ceo a {
+      color: #00ffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .moderators a:hover, .ceo a:hover {
+      color: #00cccc;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .avatar {
+        margin: 0 auto 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="avatar">
-      <img src="https://cdn.discordapp.com/avatars/1006607278885056643/4f8661b663c9af3c1d10e27e4714d47b.png?size=128" alt="BlithBot Avatar">
-    </div>
-    
-    <div>
-      <h1>BlithBot</h1>
+  <header>
+    <div class="container">
+      <div class="avatar">
+        <img src="https://cdn.discordapp.com/avatars/1006607278885056643/4f8661b663c9af3c1d10e27e4714d47b.png?size=128" alt="BlithBot Avatar">
+      </div>
       
-      <a href="https://discord.gg/9hehRx3qcj" class="button">Serwer SUPPORT</a>
-      <a href="https://discord.com/oauth2/authorize?client_id=1006607278885056643&scope=bot%20applications.commands&permissions=2146958847" class="button">Dodaj bota</a>
+      <div>
+        <h1>BlithBot</h1>
+        
+        <a href="https://discord.gg/9hehRx3qcj" class="button">Serwer SUPPORT</a>
+        <a href="https://discord.com/oauth2/authorize?client_id=1006607278885056643&scope=bot%20applications.commands&permissions=2146958847" class="button">Dodaj bota</a>
+      </div>
     </div>
-  </div>
+  </header>
   
-  <div class="sidebar">
-    <p>Jestem tworzony w BDFD</p>
-    <p>Moj prefix to: "b!"</p>
-    <p>Komendy znajdziesz gdy wpiszesz b!help</p>
-    
-    <div class="moderators">
-      <h2>Moderatorzy:</h2>
-      <ul>
-        <li>blith_2 Ig:playboi_blith</li>
-<li>frugo_official</li>
-      </ul>
+  <main>
+    <div class="sidebar">
+      <p>Jestem tworzony w BDFD</p>
+      <p>Mój prefix to: "b!"</p>
+      <p>Komendy znajdziesz gdy wpiszesz b!help</p>
+      
+      <div class="ceo">
+        <h2>CEO:</h2>
+        <ul>
+          <li><a href="https://discord.com/users/1259623282903351336">blith</a></li>
+        </ul>
+      </div>
+      
+      <div class="moderators">
+        <h2>Moderatorzy:</h2>
+        <ul>
+          <li><a href="https://discord.com/users/1002243141971230800">frugo_official</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 BlithBot. Wszelkie prawa zastrzeżone.</p>
+  </footer>
 </body>
 </html>
